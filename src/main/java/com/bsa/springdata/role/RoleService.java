@@ -9,6 +9,6 @@ public class RoleService {
     private RoleRepository roleRepository;
 
     public void deleteRole(String roleCode) {
-        // TODO: Use a single query
+        roleRepository.deleteByCodeAndUsersIsEmpty(roleCode);
     }
 }

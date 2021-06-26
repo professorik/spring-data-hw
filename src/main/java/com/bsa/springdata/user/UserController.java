@@ -16,15 +16,15 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @GetMapping
-    public List<UserDto> getUsers() {
-        return userService.getUsers();
-    }
-
     @GetMapping("/{id}")
     public UserDto getUser(@PathVariable UUID id) {
         return userService.getUserById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+    }
+
+    @GetMapping
+    public List<UserDto> getUser() {
+        return userService.getUsers();
     }
 
     @PostMapping

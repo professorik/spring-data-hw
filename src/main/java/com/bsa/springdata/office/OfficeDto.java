@@ -1,7 +1,12 @@
 package com.bsa.springdata.office;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.util.UUID;
 
+@Builder
+@Data
 public class OfficeDto {
     private final UUID id;
     private final String city;

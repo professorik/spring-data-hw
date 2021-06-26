@@ -1,7 +1,12 @@
 package com.bsa.springdata.role;
 
+import lombok.Builder;
+import lombok.Data;
+
 import java.util.UUID;
 
+@Builder
+@Data
 public class RoleDto {
     private final UUID id;
     private final String name;
